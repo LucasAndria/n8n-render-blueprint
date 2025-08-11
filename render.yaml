@@ -8,15 +8,42 @@ services:
     plan: free
     region: frankfurt
     envVars:
-      - key: NODE_ENV
-        value: production
-      - key: N8N_RUNNERS_ENABLED
-        value: true
+      - key: DB_POSTGRESDB_DATABASE
+        value: postgres
+      - key: DB_POSTGRESDB_HOST
+        sync: false
+      - key: DB_POSTGRESDB_PASSWORD
+        sync: false
+      - key: DB_POSTGRESDB_PORT
+        sync: false
+      - key: DB_POSTGRESDB_USER
+        sync: false
+      - key: DB_TYPE
+        value: postgresdb
+      - key: GENERIC_TIMEZONE
+        value: Africa/Nairobi
+      - key: N8N_DEFAULT_LOCALE
+        value: fr
+      - key: N8N_EDITOR_BASE_URL
+        value: https://your-n8n.onrender.com
+        sync: false
       - key: N8N_EXECUTIONS_MODE
         value: "queue"
       - key: N8N_HOST
+        value: https://your-n8n.onrender.com
         sync: false
-      - key: N8N_EDITOR_BASE_URL
+      - key: N8N_LOG_LEVEL
+        value: info
+      - key: N8N_RUNNERS_ENABLED
+        value: true
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: "5678"
+      - key: TZ
+        value: Africa/Nairobi
+      - key: WEBHOOK_URL
+        value: https://your-n8n.onrender.com/
         sync: false
     healthCheckPath: /healthz
     autoDeploy: true
